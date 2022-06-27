@@ -4,8 +4,121 @@ body {
   padding: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #BAD4CB;
+}
+
+.field {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px 40px;
+  border: 4px solid #FFFFFF;
+  /* border-top-color: #FF814E;
+  border-left-color: #FF814E;
+  border-right-color: #6DB6D0;
+  border-bottom-color: #6DB6D0; */
+}
+
+.title {
+  text-align: center;
+  color: #34445D;
+}
+
+.title-h2 {
+  font-family: 'Anek Malayalam', sans-serif;
+  color: #FFFFFF;
+  margin-top: 0;
+}
+
+.game-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-field {
+  background-color: #6DB6D0;
+}
+
+.computer-field {
+  background-color: #FF814E;
+}
+
+.user-field, .computer-field {
+  padding: 15px;
+  border-radius: 20px;
+}
+
+
 .btn-elem {
   width: 70px;
   height: 70px;
   border-radius: 50%;
+  margin: 5px;
+  border: 2px solid #FFFFFF;background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+}
+
+.green {
+  background-color: #4BA277;
+}
+
+.red {
+  background-color: #FE4004;
+}
+
+.result-text {
+  text-align: center;
+  color: #34445D;
+}
+
+.vs-text {
+  font-family: 'Anek Malayalam', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #34445D;
+}
+
+.btn-reset {
+  font-family: 'Anek Malayalam', sans-serif;
+  background-color: #FFFFFF;
+  color: #34445D;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 30px;
+  border-radius: 10px;
+  border: 1px solid #34445D;
+  padding: 10px 20px;
+}
+
+.score-field {
+  max-width: 100px;
+  margin-left: auto;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.anim .rock {
+	animation: anim 0.4s linear infinite;
+}
+.anim .scissors {
+	animation: anim 0.4s 0.1s linear infinite;
+}
+.anim .paper {
+	animation: anim 0.4s 0.2s linear infinite;
+}
+
+@keyframes anim {
+	100% {background-color: #4BA277;}
 }
