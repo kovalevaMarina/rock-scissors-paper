@@ -84,7 +84,7 @@ const addClassesToBtn = (elem, index) => {
       break;
   }
   elem.style.cssText = `
-    background-image: url("/img/${imgName}.png");
+    background-image: url("./img/${imgName}.png");
   `;
 };
 
