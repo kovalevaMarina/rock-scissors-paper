@@ -1,40 +1,22 @@
 let container = document.querySelector(".container");
 
-let field = document.createElement("div");
-field.className = "field";
+const createElement = (tag, nameClass, text = undefined) => {
+  let elem = document.createElement(tag);
+  elem.className = nameClass;
+  if (text) elem.innerHTML = text;
+  return elem;
+};
 
-let title = document.createElement("h1");
-title.className = "title";
-title.innerHTML = "Rock, paper, scissors";
-
-let game = document.createElement("div");
-game.className = "game-field";
-
-let resultText = document.createElement("h3");
-resultText.className = "result-text";
-resultText.innerHTML = "Game go! Make a choice.";
-
-let reset = document.createElement("button");
-reset.className = "btn-reset";
-reset.innerHTML = "Reset Game";
-
-let userField = document.createElement("div");
-userField.className = "user-field";
-
-let computerField = document.createElement("div");
-computerField.className = "computer-field";
-
-let vsText = document.createElement("p");
-vsText.className = "vs-text";
-vsText.innerHTML = "VS";
-
-let userTitle = document.createElement("h2");
-userTitle.className = "title-h2";
-userTitle.innerHTML = "You";
-
-let computerTitle = document.createElement("h2");
-computerTitle.className = "title-h2";
-computerTitle.innerHTML = "Computer";
+let field = createElement("div", "field");
+let title = createElement("h1", "title", "Rock, paper, scissors");
+let game = createElement("div", "game-field");
+let resultText = createElement("h3", "result-text", "Game go! Make a choice.");
+let reset = createElement("button", "btn-reset", "Reset Game");
+let userField = createElement("div", "user-field");
+let computerField = createElement("div", "computer-field");
+let vsText = createElement("p", "vs-text", "VS");
+let userTitle = createElement("h2", "title-h2", "You");
+let computerTitle = createElement("h2", "title-h2", "Computer");
 
 container.prepend(field);
 field.prepend(title);
@@ -58,8 +40,7 @@ store = {
 
 const createBtns = (field) => {
   for (let i = 0; i < store.countElem; i++) {
-    let btnsElem = document.createElement("button");
-    btnsElem.className = "btn-elem";
+    let btnsElem = createElement("button", "btn-elem");
     field.append(btnsElem);
   }
 };
@@ -101,14 +82,18 @@ let btnsElemComputer = computerField.querySelectorAll(".btn-elem");
 btnsElemComputer.forEach(addClassesToBtn);
 
 // генерация поля набраных очков
-let scoreUser = document.createElement("div");
-scoreUser.className = "score-field";
-scoreUser.innerHTML = `Score: ${store.scoreCountUser}`;
+let scoreUser = createElement(
+  "div",
+  "score-field",
+  `Score: ${store.scoreCountUser}`
+);
 userField.append(scoreUser);
 
-let scoreComputer = document.createElement("div");
-scoreComputer.className = "score-field";
-scoreComputer.innerHTML = `Score: ${store.scoreCountComputer}`;
+let scoreComputer = createElement(
+  "div",
+  "score-field",
+  `Score: ${store.scoreCountComputer}`
+);
 computerField.append(scoreComputer);
 
 let allButtons = document.querySelectorAll(".btn-elem");
